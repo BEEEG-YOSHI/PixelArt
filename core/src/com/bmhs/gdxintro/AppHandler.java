@@ -16,11 +16,27 @@ public class AppHandler extends ApplicationAdapter {
 
 	int x,y;
 
-	Array<Array<Integer>> Canvas = new Array<>();
+	//Colors:
+	//
+	int[][] canvas = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,0,0,0,0,0,2,2,2,3,3,3,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,2,2,2,2,0,0,0,3,0,0,0,0,0,0},
+			          {0,0,0,0,0,2,2,2,2,0,0,0,0,0,3,0,0,0,0,0},
+			          {0,0,0,0,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,0,0,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,0,2,2,0,0,2,2,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
+
+
 
 		x = 0;
 		y = 0;
@@ -31,7 +47,11 @@ public class AppHandler extends ApplicationAdapter {
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
 
-
+		for(int r = 0; r < canvas.length; r++){
+			for(int c = 0; c < canvas[r].length; c++){
+				batch.draw(TileHandler.getTileHandler().getWorldTileArray().get(canvas[r][c]).getTexture(),c*64, Gdx.graphics.getHeight()-64-(r*64));
+			}
+		}
 
 		batch.end();
 

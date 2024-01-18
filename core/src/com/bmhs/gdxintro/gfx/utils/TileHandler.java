@@ -25,15 +25,15 @@ public class TileHandler {
         Texture tempTexture = new Texture(primaryColorSheetPath);
 
         TextureRegion tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*2, spriteOnSheetHeight*0, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile blackWorldTile = new WorldTile(tempRegion, 0, "black");
+        WorldTile blackWorldTile = new WorldTile(tempRegion, 0, "green1");
         worldTileArray.add(blackWorldTile);
 
         tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*3, spriteOnSheetHeight*0, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile whiteWorldTile = new WorldTile(tempRegion, 1, "white");
+        WorldTile whiteWorldTile = new WorldTile(tempRegion, 1, "green2");
         worldTileArray.add(whiteWorldTile);
 
         tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*0, spriteOnSheetHeight*2, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile redWorldTile = new WorldTile(tempRegion, 2, "red");
+        WorldTile redWorldTile = new WorldTile(tempRegion, 2, "white");
         worldTileArray.add(redWorldTile);
 
         tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*0, spriteOnSheetHeight*5, spriteOnSheetWidth, spriteOnSheetHeight);

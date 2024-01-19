@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.bmhs.gdxintro.gfx.assets.Tile;
 import com.bmhs.gdxintro.gfx.utils.TileHandler;
 
 public class AppHandler extends ApplicationAdapter {
@@ -18,7 +19,7 @@ public class AppHandler extends ApplicationAdapter {
 
 	//Colors:
 	//
-	int[][] canvas = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	int[][] canvas = {{0,1,2,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -29,6 +30,14 @@ public class AppHandler extends ApplicationAdapter {
 			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+					  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 			          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
 
 
@@ -49,7 +58,7 @@ public class AppHandler extends ApplicationAdapter {
 
 		for(int r = 0; r < canvas.length; r++){
 			for(int c = 0; c < canvas[r].length; c++){
-				batch.draw(TileHandler.getTileHandler().getWorldTileArray().get(canvas[r][c]).getTexture(),c*64, Gdx.graphics.getHeight()-64-(r*64));
+				batch.draw(TileHandler.getTileHandler().getWorldTileArray().get(canvas[r][c]).getTexture(),c*Tile.ON_SCREEN_DEFAULT_WIDTH, Gdx.graphics.getHeight()-Tile.ON_SCREEN_DEFAULT_HEIGHT-(r*Tile.ON_SCREEN_DEFAULT_HEIGHT));
 			}
 		}
 

@@ -19,30 +19,30 @@ public class TileHandler {
     private TileHandler() {
         worldTileArray = new Array<>();
 
-        spriteOnSheetHeight = Tile.ON_SCREEN_DEFAULT_HEIGHT;
-        spriteOnSheetWidth = Tile.ON_SCREEN_DEFAULT_WIDTH;
+        spriteOnSheetHeight = 64;
+        spriteOnSheetWidth = 64;
 
         Texture tempTexture = new Texture(primaryColorSheetPath);
 
         TextureRegion tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*2, spriteOnSheetHeight*0, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile blackWorldTile = new WorldTile(tempRegion, 0, "green1");
+        WorldTile blackWorldTile = new WorldTile(tempRegion, 0, "black");
         worldTileArray.add(blackWorldTile);
 
-        tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*3, spriteOnSheetHeight*0, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile whiteWorldTile = new WorldTile(tempRegion, 1, "green2");
-        worldTileArray.add(whiteWorldTile);
-
-        tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*0, spriteOnSheetHeight*2, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile redWorldTile = new WorldTile(tempRegion, 2, "white");
-        worldTileArray.add(redWorldTile);
-
         tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*0, spriteOnSheetHeight*5, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile greenWorldTile = new WorldTile(tempRegion, 3, "green");
-        worldTileArray.add(greenWorldTile);
+        WorldTile green1WorldTile = new WorldTile(tempRegion, 1, "green1");
+        worldTileArray.add(green1WorldTile);
 
-        tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*0, spriteOnSheetHeight*8, spriteOnSheetWidth, spriteOnSheetHeight);
-        WorldTile blueWorldTile = new WorldTile(tempRegion, 4, "blue");
-        worldTileArray.add(blueWorldTile);
+        tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*0, spriteOnSheetHeight*6, spriteOnSheetWidth, spriteOnSheetHeight);
+        WorldTile green2WorldTile = new WorldTile(tempRegion, 2, "green2");
+        worldTileArray.add(green2WorldTile);
+
+        tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*5, spriteOnSheetHeight*1, spriteOnSheetWidth, spriteOnSheetHeight);
+        WorldTile grayWorldTile = new WorldTile(tempRegion, 3, "gray");
+        worldTileArray.add(grayWorldTile);
+
+        tempRegion = new TextureRegion(tempTexture, spriteOnSheetWidth*0, spriteOnSheetHeight*9, spriteOnSheetWidth, spriteOnSheetHeight);
+        WorldTile gray2WorldTile = new WorldTile(tempRegion, 4, "gray2");
+        worldTileArray.add(gray2WorldTile);
     }
 
 

@@ -74,7 +74,7 @@ public class AppHandler extends ApplicationAdapter {
 		}
 		batch.draw(img, 25,635);
 		batch.draw(img, 375,735);
-		batch.draw(img, 725,635);
+		batch.draw(img, 740,635);
 		batch.end();
 
 		//checkInput();

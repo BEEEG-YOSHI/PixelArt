@@ -15,6 +15,8 @@ import com.bmhs.gdxintro.gfx.utils.TileHandler;
 public class AppHandler extends ApplicationAdapter {
 	SpriteBatch batch;
 
+	Texture img;
+
 	int x,y;
 
 	//Colors:
@@ -27,7 +29,7 @@ public class AppHandler extends ApplicationAdapter {
 			{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,4 ,4 ,3 ,3 ,1 ,1 ,1 ,1 ,1 ,3 ,3 ,4 ,4 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
 			{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,4 ,4 ,3 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,3 ,4 ,4 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
 			{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,4 ,3 ,1 ,1 ,2 ,1 ,1 ,1 ,1 ,1 ,2 ,1 ,1 ,3 ,4 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
-		        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,1 ,1 ,2 ,3 ,2 ,1 ,1 ,1 ,2 ,3 ,2 ,1 ,1 ,3 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
+		    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,1 ,1 ,2 ,3 ,2 ,1 ,1 ,1 ,2 ,3 ,2 ,1 ,1 ,3 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
 			{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,1 ,1 ,1 ,2 ,1 ,1 ,1 ,1 ,1 ,2 ,1 ,1 ,1 ,3 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
 			{0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,2 ,1 ,1 ,1 ,1 ,1 ,1 ,1 ,3 ,0 ,0 ,0 ,0 ,0 ,5 ,0 },
 			{0 ,5 ,0 ,0 ,0 ,0 ,2 ,3 ,1 ,1 ,1 ,1 ,1 ,1 ,3 ,2 ,3 ,1 ,1 ,1 ,1 ,1 ,1 ,3 ,2 ,0 ,5 ,0 ,0 ,5 ,0 },
@@ -53,7 +55,7 @@ public class AppHandler extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-
+		img = new Texture("goblin.png");
 
 
 		x = 0;
@@ -70,7 +72,9 @@ public class AppHandler extends ApplicationAdapter {
 				batch.draw(TileHandler.getTileHandler().getWorldTileArray().get(canvas[r][c]).getTexture(),c*Tile.ON_SCREEN_DEFAULT_WIDTH, Gdx.graphics.getHeight()-Tile.ON_SCREEN_DEFAULT_HEIGHT-(r*Tile.ON_SCREEN_DEFAULT_HEIGHT));
 			}
 		}
-
+		batch.draw(img, 25,635);
+		batch.draw(img, 375,735);
+		batch.draw(img, 725,635);
 		batch.end();
 
 		//checkInput();
